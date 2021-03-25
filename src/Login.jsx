@@ -23,7 +23,11 @@ function Login() {
                     break;    
                 }
             }
-            if(found === false) alert('Account is not registered...');
+            if(found === false) {
+                alert('Account is not registered...');
+                setEmail('');
+                setPassword('');
+            }
     }
     const registerIn = (e) =>{
         e.preventDefault();
@@ -39,6 +43,8 @@ function Login() {
             console.log(user);
             if(user.email === email){
                 alert('This account is already registered. Please Sign In');
+                setEmail('');
+                setPassword('');
                 found=true;
                 break;    
             }
